@@ -1,43 +1,67 @@
 
-
+#app-content {
+    font-size: 1.8em;
+    color: #1b3a5f;
+    padding: 10px 10px 2px;
+    font-weight: 700;
+}
 
 .panel-component-filtre {
     background: white;
-    border: 1px solid #ccc;
-    padding: 5px;
+
 }
 
 .panel-component-title {
-    border-bottom:  1px solid #ccc;
+    padding: 5px;
+    margin-left: 20px;
 }
 
-.panel-component-subtitle {
-    margin-top: -25px;
-}
-
-.panel-component-content {
-    padding: 20px;
+.panel-content {
+    background-color: #fff;
+    min-height: 100px;
+    padding: 18px!important;
+    border-radius: 3px;
+    margin-left: 11px;
+    border-bottom: 5px solid #e2e6e9;
 }
 
 .panel-component-form {
     margin-top: -35px;
-    margin-bottom: 35px;
 }
 
 label {
-    font-size: 14px;
-    color: #407EC9;
-    font-weight: bold;
+    display: block;
+    top: -20px;
+    font-size: 12px;
+    color: #407ec9!important;
+}
+
+.labelDropdown {
+    margin-top: -19px;
+    color: #407ec9!important;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.btn-autocompleted {
+    margin-left: -23px;
+    font-size: 8px;
+}
+
+
+
+mat-form-field {
+    width: 100%;
 }
 
 
 h1 {
-    font-size: 25px;
-    color: #1A264D !important;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-family: 'Poiret One' !important;
-    letter-spacing: -2px;
+    font-size: 3em;
+    color: #1b3a5f;
+    font-family: 'Poiret One',Roboto,sans-serif;
+    margin-bottom: .5em;
+    text-transform: uppercase!important;
+    text-shadow: 0 1px 1px #fff!important;
 }
 
 h2 {
@@ -45,7 +69,6 @@ h2 {
     color: #407EC9;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
 h3 {
@@ -57,18 +80,10 @@ h3 {
 }
 
 h4 {
-    font-size: 20px;
-    color:#1A264D;
-    letter-spacing: -2px;
+    color: #1b3a5f!important;
+    font-size: 14px!important;
+    font-weight: 700!important;
+    margin-bottom: 1em!important;
+    font-family: inherit!important;
+    text-transform: capitalize;
 }
-/* 
-.example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-}
-  
-.example-full-width {
-    width: 100%;
-} */
-

@@ -1,32 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FiltreReporteComponent } from './filtre-reporte/filtre-reporte.component';
 
-import { MatButtonModule, MatDatepickerModule ,MatCheckboxModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule} from '@angular/material';
+import { MatButtonToggleModule, MatButtonModule, MatDatepickerModule, MatCheckboxModule, MatInputModule, MatAutocompleteModule, MatFormFieldModule, MatNativeDateModule, MatDatepickerToggle, MatSelectModule, MatIconModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
       AppComponent,
-      FiltreReporteComponent
+      FiltreReporteComponent,
    ],
    imports: [
       BrowserModule,
       BrowserAnimationsModule,
       AppRoutingModule,
+      MatButtonToggleModule,
       MatButtonModule,
       MatInputModule,
+      MatSelectModule,
       MatAutocompleteModule,
       MatFormFieldModule,
       MatDatepickerModule,
+      MatNativeDateModule,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      MatIconModule
+
    ],
-   providers: [],
+   providers: [
+      MatDatepickerModule
+   ],
    bootstrap: [
       AppComponent
    ]
