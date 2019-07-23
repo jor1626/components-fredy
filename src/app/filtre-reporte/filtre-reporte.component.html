@@ -8,58 +8,108 @@
         <h4>Parámetros del Informe</h4>
         <div class="row">
           <div class="col-xs-3">
-            <label for="labelDropdown">Fecha de corte*:</label>
-            <mat-form-field>
-              <input matInput autocomplete="off" [matDatepicker]="picker" autofocus="" maxlength="19"
-                name="fchComponent" pinputtext="" placeholder="DD-MM-YYYY HH:MM:SS" type="text" tabindex="0">
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
-            </mat-form-field>
-          </div>
-          <div class="col-xs-3">
-            <label for="labelDropdown">Grupo inicial*</label>
-            <mat-form-field>
-              <a matPrefix class="btn-autocompleted btn btn-xs btn-primary glyphicon glyphicon-plus"></a>
-              <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-              <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                  {{option}}
-                </mat-option>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="labelInput">Fecha de corte:*</label>
+                <mat-form-field>
+                  <input matInput autocomplete="off" [matDatepicker]="picker" autofocus="" maxlength="19"
+                    name="fchComponent" pinputtext="" placeholder="DD-MM-YYYY HH:MM:SS" type="text" tabindex="0">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+                </mat-form-field>
+              </div>
+            </div>
 
-              </mat-autocomplete>
-              <span matSuffix class="glyphicon glyphicon-chevron-down">
-              </span>
+          </div>
+          <div class="col-xs-3">
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="labelInput">Grupo inicial*</label>
+                <mat-form-field>
+                  <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
+                    <i class="glyphicon glyphicon-plus"></i>
+                  </a>
+                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
 
-            </mat-form-field>
+                  </mat-autocomplete>
+                  <span matSuffix class="glyphicon glyphicon-chevron-down">
+                  </span>
+
+                </mat-form-field>
+              </div>
+            </div>
           </div>
           <div class="col-xs-3">
-            <label for="labelDropdown">Grupo Final*</label>
-            <mat-form-field>
-              <mat-select>
-                <mat-option [value]="">Jordan</mat-option>
-              </mat-select>
-            </mat-form-field>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="labelInput">Grupo final*</label>
+                <mat-form-field>
+                  <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
+                    <i class="glyphicon glyphicon-plus"></i>
+                  </a>
+                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+
+                  </mat-autocomplete>
+                  <span matSuffix class="glyphicon glyphicon-chevron-down">
+                  </span>
+
+                </mat-form-field>
+              </div>
+            </div>
           </div>
           <div class="col-xs-3">
-            <label for="labelDropdown">Existencia*</label>
-            <mat-form-field>
-              <mat-select>
-                <mat-option [value]=""></mat-option>
-              </mat-select>
-            </mat-form-field>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="labelInput">Existencia*</label>
+                <mat-form-field>
+                  <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
+                    <i class="glyphicon glyphicon-plus"></i>
+                  </a>
+                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+
+                  </mat-autocomplete>
+                  <span matSuffix class="glyphicon glyphicon-chevron-down">
+                  </span>
+
+                </mat-form-field>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3">
-            <label for="labelDropdown">Bodegas*</label>
-            <mat-form-field>
-              <mat-select placeholder="Bodegas!">
-                <mat-option [value]="">Jordan</mat-option>
-              </mat-select>
-            </mat-form-field>
+            <div class="row">
+              <div class="col-xs-12">
+                <label class="labelInput">Bodegas*</label>
+                <mat-form-field>
+                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+
+                  </mat-autocomplete>
+                  <span matSuffix class="glyphicon glyphicon-chevron-down">
+                  </span>
+
+                </mat-form-field>
+              </div>
+            </div>
           </div>
           <div class="col-xs-3">
-            <label for="labelDropdown">Tipo:</label>
+            <label class="labelInput">Tipo:</label>
             <mat-form-field>
               <mat-select>
                 <mat-option [value]="">Jordan</mat-option>

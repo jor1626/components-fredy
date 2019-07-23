@@ -1,0 +1,12 @@
+{
+    "grupops": [
+        {
+            "codigo": "01",
+            "nombre": "Grupo 1"
+        },
+        {
+            "codigo": "02",
+            "nombre": "Grupo 2"
+        }
+    ]
+}
