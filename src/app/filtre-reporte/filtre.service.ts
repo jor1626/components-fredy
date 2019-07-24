@@ -15,7 +15,7 @@ export class FiltreService {
   getFiltros() {
     return this.http.get(this._jsonURL).pipe(
       map((response: any) => {
-        return response.grupops;
+        return response['filters'];
       })
     );
   }

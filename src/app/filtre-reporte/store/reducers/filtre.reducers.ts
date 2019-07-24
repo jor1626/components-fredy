@@ -30,7 +30,7 @@ export function filtreReducers(state = estadoInicial, Actions: fromFilter.Action
                 ...state,
                 loading: false,
                 loaded: true,
-                filters: [...Actions.filters]
+                filters: [ ...Actions.filters ]
             };
 
         case fromFilter.LISTAR_FILTRO_FAIL:

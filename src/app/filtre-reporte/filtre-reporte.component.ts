@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducers';
+import * as fromFilter from './store/actions/filter.actions';
 
 @Component({
   selector: 'app-filtre-reporte',
@@ -21,6 +22,10 @@ export class FiltreReporteComponent implements OnInit {
   }
 
   ngOnInit() {
+    const action = new fromFilter.ListarFiltroAction();
+
+    this.strore.dispatch(action);
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
