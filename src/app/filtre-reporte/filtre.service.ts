@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,26 @@ export class FiltreService {
 
   constructor(private http: HttpClient) { }
 
-  getFiltros() {
+  public getGrupos() {
     return this.http.get(this._jsonURL).pipe(
       map((response: any) => {
-        return response['filters'];
+        return response['grupos'];
+      })
+    );
+  }
+
+  getExistencias() {
+    return this.http.get(this._jsonURL).pipe(
+      map((response: any) => {
+        return response['existencias'];
+      })
+    );
+  }
+
+  getBodegas() {
+    return this.http.get(this._jsonURL).pipe(
+      map((response: any) => {
+        return response['bodegas'];
       })
     );
   }

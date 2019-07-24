@@ -12,8 +12,9 @@
               <div class="col-xs-12">
                 <label class="labelInput">Fecha de corte:*</label>
                 <mat-form-field>
-                  <input matInput autocomplete="off" [matDatepicker]="picker" autofocus="" maxlength="19"
-                    name="fchComponent" pinputtext="" placeholder="DD-MM-YYYY HH:MM:SS" type="text" tabindex="0">
+                  <input [formControl]="fechaCorteTxt" matInput autocomplete="off" [matDatepicker]="picker" autofocus=""
+                    maxlength="19" name="fechaCorteTxt" pinputtext="" placeholder="DD-MM-YYYY HH:MM:SS" type="text"
+                    tabindex="0">
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
                 </mat-form-field>
@@ -25,19 +26,19 @@
             <div class="row">
               <div class="col-xs-12">
                 <label class="labelInput">Grupo inicial*</label>
+
                 <mat-form-field>
                   <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
                     <i class="glyphicon glyphicon-plus"></i>
                   </a>
-                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <input type="text" aria-label="Number" matInput [formControl]="grupoInicialTxt"
+                    [matAutocomplete]="auto">
                   <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                      {{option}}
+                    <mat-option *ngFor="let option of filterGrupoInicial | async" [value]="option.nombre">
+                      {{option | json}}
                     </mat-option>
-
                   </mat-autocomplete>
-                  <span matSuffix class="glyphicon glyphicon-chevron-down">
-                  </span>
+                  <span matSuffix class="glyphicon glyphicon-chevron-down"></span>
 
                 </mat-form-field>
               </div>
@@ -51,9 +52,10 @@
                   <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
                     <i class="glyphicon glyphicon-plus"></i>
                   </a>
-                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <input type="text" aria-label="Number" name="grupoFinalTxt" matInput [formControl]="grupoFinalTxt"
+                    [matAutocomplete]="auto">
                   <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    <mat-option *ngFor="let option of filterGrupoFinal | async" [value]="option">
                       {{option}}
                     </mat-option>
 
@@ -73,9 +75,10 @@
                   <a matPrefix class="btn btn-xs btn-primary btn-autocompleted">
                     <i class="glyphicon glyphicon-plus"></i>
                   </a>
-                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <input type="text" name="existenciaTxt" aria-label="Number" matInput [formControl]="existenciaTxt"
+                    [matAutocomplete]="auto">
                   <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    <mat-option *ngFor="let option of filterExistencia | async" [value]="option">
                       {{option}}
                     </mat-option>
 
@@ -94,12 +97,12 @@
               <div class="col-xs-12">
                 <label class="labelInput">Bodegas*</label>
                 <mat-form-field>
-                  <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <input type="text" name="bodegasTxt" aria-label="Number" matInput [formControl]="bodegasTxt"
+                    [matAutocomplete]="auto">
                   <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                      {{option}}
+                    <mat-option *ngFor="let option of filterBodegas | async" [value]="option.nombre">
+                      {{option.nombre}}
                     </mat-option>
-
                   </mat-autocomplete>
                   <span matSuffix class="glyphicon glyphicon-chevron-down">
                   </span>
@@ -111,7 +114,7 @@
           <div class="col-xs-3">
             <label class="labelInput">Tipo:</label>
             <mat-form-field>
-              <mat-select>
+              <mat-select [formControl]="tipoTxt" name="tipoTxt">
                 <mat-option [value]="">Jordan</mat-option>
               </mat-select>
             </mat-form-field>

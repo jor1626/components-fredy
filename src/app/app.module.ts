@@ -6,7 +6,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
-import { appReducers } from './app.reducers';
+import { appReducers, effectsArray } from './app.reducers';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +16,6 @@ import { MatButtonToggleModule, MatButtonModule, MatDatepickerModule, MatCheckbo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
-import { FilterEffectsService } from './filtre-reporte/store/effects/filter.effects';
 
 @NgModule({
    declarations: [
@@ -44,9 +43,7 @@ import { FilterEffectsService } from './filtre-reporte/store/effects/filter.effe
          maxAge: 25,
          logOnly: environment.production
       }),
-      EffectsModule.forRoot([
-         FilterEffectsService
-      ])
+      EffectsModule.forRoot(effectsArray),
    ],
    providers: [
       MatDatepickerModule,

@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducers';
-import * as fromFilter from './store/actions/filter.actions';
+import * as fromGrupo from './store/actions/grupo.actions';
+import { GrupoClass } from './models/grupo.model';
+import { BodegaClass } from './models/bodegas.model';
 
 @Component({
   selector: 'app-filtre-reporte',
@@ -12,30 +14,65 @@ import * as fromFilter from './store/actions/filter.actions';
   styleUrls: ['./filtre-reporte.component.css']
 })
 export class FiltreReporteComponent implements OnInit {
-  startDate = new Date(1990, 0, 1);
-  myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
-  filteredOptions: Observable<string[]>;
+  startDate = new Date();
+  fechaCorteTxt = new FormControl();
+  grupoInicialTxt = new FormControl();
+  grupoFinalTxt = new FormControl();
+  existenciaTxt = new FormControl();
+  bodegasTxt = new FormControl();
+  tipoTxt = new FormControl();
 
-  constructor(private strore: Store<AppState>) {
+  grupos: GrupoClass[] = [];
+  bodegas: BodegaClass[] = [];
+  existencias: GrupoClass[] = [];
+  filterGrupoInicial: Observable<GrupoClass[]>;
+  filterGrupoFinal: Observable<GrupoClass[]>;
+  filterExistencia: Observable<GrupoClass[]>;
+  filterBodegas: Observable<BodegaClass[]>;
+
+  constructor(private store: Store<AppState>) {
+    this.store.dispatch(new fromGrupo.ListarGrupoAction());
+
+    this.store.select('grupos').subscribe(state => console.log(state.grupos));
 
   }
 
   ngOnInit() {
-    const action = new fromFilter.ListarFiltroAction();
 
-    this.strore.dispatch(action);
 
-    this.filteredOptions = this.myControl.valueChanges.pipe(
+
+    this.filterGrupoInicial = this.grupoInicialTxt.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value))
+      map(value => this._filtroGrupo(value))
     );
+
+    // this.filterExistencia = this.existenciaTxt.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filterExitencia(value))
+    // );
+
+    // this.filterBodegas = this.bodegasTxt.valueChanges.pipe(
+    //   startWith(''),
+    //   map(value => this._filterBodega(value))
+    // );
   }
 
-  private _filter(value: string): string[] {
+  private _filtroGrupo(value: string): GrupoClass[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    return this.grupos.filter(option => option.nombre.toLowerCase().includes(filterValue));
+  }
+
+  private _filterExitencia(value: string): GrupoClass[] {
+    const filterValue = value.toLowerCase();
+
+    return this.existencias.filter(option => option.nombre.toLowerCase().includes(filterValue));
+  }
+
+  private _filterBodega(value: string): GrupoClass[] {
+    const filterValue = value.toLowerCase();
+
+    return this.bodegas.filter(option => option.nombre.toLowerCase().includes(filterValue));
   }
 
 }
