@@ -15,7 +15,7 @@ const estadoInicial: GrupoState = {
     error: null
 }
 
-export function grupoReducer(state = estadoInicial, Actions: fromGrupo.ActionsGrupo): GrupoState {
+export function gruposReducer(state = estadoInicial, Actions: fromGrupo.ActionsGrupo): GrupoState {
 
     switch (Actions.type) {
 

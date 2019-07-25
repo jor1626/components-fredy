@@ -36,4 +36,28 @@ export class FiltreService {
     );
   }
 
+  getNiveles() {
+    return this.http.get(this._jsonURL).pipe(
+      map((response: any) => {
+        return response['niveles'];
+      })
+    );
+  }
+
+  getValores() {
+    return this.http.get(this._jsonURL).pipe(
+      map((response: any) => {
+        return response['valores'];
+      })
+    );
+  }
+
+  getCentros() {
+    return this.http.get(this._jsonURL).pipe(
+      map((response: any) => {
+        return response['centros'];
+      })
+    );
+  }
+
 }

@@ -9,6 +9,30 @@
             "nombre": "Grupo 2"
         }
     ],
+    "niveles": [
+        {
+            "codigo": "01",
+            "nombre": "Nivel 1"
+        },
+        {
+            "codigo": "02",
+            "nombre": "Nivel 2"
+        }
+    ],
+    "valores": [
+        {
+            "codigo": "01",
+            "nombre": "Unidades"
+        },
+        {
+            "codigo": "02",
+            "nombre": "Miles"
+        },
+        {
+            "codigo": "03",
+            "nombre": "Millones"
+        }
+    ],
     "bodegas": [
         {
             "codigo": "01",
@@ -17,6 +41,24 @@
         {
             "codigo": "02",
             "nombre": "Bodega 2"
+        }
+    ],
+    "centros": [
+        {
+            "codigo": "01",
+            "nombre": "Area administrativa"
+        },
+        {
+            "codigo": "02",
+            "nombre": "NEGOCIO IMPRESORAS CAVIPETROL"
+        },
+        {
+            "codigo": "03",
+            "nombre": "NEGOCIO IMPRESORAS IBC CODE CONTROL"
+        },
+        {
+            "codigo": "02",
+            "nombre": "NEGOCIO IMPRESORAS SCANIA COLOMBIA S.A.S"
         }
     ],
     "existencias": [

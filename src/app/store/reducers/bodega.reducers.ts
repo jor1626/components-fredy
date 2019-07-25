@@ -1,5 +1,5 @@
-import { BodegaClass } from './../../models/bodegas.model';
-import * as fromBodegas from "./../actions/bodega.actions";
+import { BodegaClass } from '../../models/bodegas.model';
+import * as fromBodegas from "../actions/bodega.actions";
 
 
 export interface BodegaState {
@@ -16,7 +16,7 @@ const estadoInicial: BodegaState = {
     errors: null
 }
 
-export function bodegaReducer(state = estadoInicial, Actions: fromBodegas.ActionsBodega): BodegaState {
+export function bodegasReducer(state = estadoInicial, Actions: fromBodegas.ActionsBodega): BodegaState {
     switch (Actions.type) {
         case fromBodegas.LISTAR_BODEGAS:
 
