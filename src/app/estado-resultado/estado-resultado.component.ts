@@ -10,6 +10,7 @@ import * as fromValores from './../store/actions/valor.actions';
 import * as fromCentros from './../store/actions/centro.actions';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
+import { EChartOption } from 'echarts';
 
 @Component({
   selector: 'app-estado-resultado',
@@ -24,6 +25,9 @@ export class EstadoResultadoComponent implements OnInit {
   public now = new Date();
   fechaI = new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate());
   fechaF = new Date(this.now.getFullYear(), this.now.getMonth(), this.now.getDate() + 30);
+  chartOption1: EChartOption;
+  chartOption2: EChartOption;
+  chartOption3: EChartOption;
 
 
   //AutoComplete material
@@ -37,6 +41,48 @@ export class EstadoResultadoComponent implements OnInit {
     this.nivelesList = [];
     this.valoresList = [];
     this.centrosList = [];
+
+    this.chartOption1 = {
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line'
+      }]
+    }
+
+    this.chartOption2 = {
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line'
+      }]
+    }
+
+    this.chartOption3 = {
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line'
+      }]
+    }
   }
 
   ngOnInit() {

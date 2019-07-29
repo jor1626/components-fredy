@@ -117,3 +117,9 @@ h4 {
     text-transform: capitalize;
 }
 
+
+.btn-accion {
+    color: #FFFFFF;
+    background: #407EC9;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26) !important;
+}
