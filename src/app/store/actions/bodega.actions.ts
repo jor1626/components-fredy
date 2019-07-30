@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { BodegaClass } from '../../models/bodegas.model';
+import { BodegaClass } from './../../models/bodegas.model';
 
 export const LISTAR_BODEGAS = '[BODEGAS] Listar';
 export const LISTAR_BODEGAS_SUCCESS = '[BODEGAS] Listar Success';

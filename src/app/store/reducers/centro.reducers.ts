@@ -1,5 +1,5 @@
-import { GrupoClass } from '../../models/grupo.model';
-import * as fromCentros from "../actions/centro.actions";
+import { GrupoClass } from './../../models/grupo.model';
+import * as fromCentros from "./../actions/centro.actions";
 
 
 export interface CentroState {

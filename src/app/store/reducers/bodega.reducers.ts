@@ -1,5 +1,5 @@
-import { BodegaClass } from '../../models/bodegas.model';
-import * as fromBodegas from "../actions/bodega.actions";
+import { BodegaClass } from './../../models/bodegas.model';
+import * as fromBodegas from "./../actions/bodega.actions";
 
 
 export interface BodegaState {

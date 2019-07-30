@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { GrupoClass } from 'src/app/models/grupo.model';
+import { GrupoClass } from './../../models/grupo.model';
 
 export const LISTAR_NIVELES = '[NIVELES] Listar Niveles';
 export const LISTAR_NIVELES_SUCCESS = '[NIVELES] Listar Niveles Success';

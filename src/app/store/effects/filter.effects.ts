@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import * as fromGrupos from "../actions/grupo.actions";
-import * as fromBodegas from "../actions/bodega.actions";
-import * as fromNiveles from "../actions/nivel.actions";
-import * as fromValores from "../actions/valor.actions";
-import * as fromCentros from "../actions/centro.actions";
+import * as fromGrupos from "./../actions/grupo.actions";
+import * as fromBodegas from "./../actions/bodega.actions";
+import * as fromNiveles from "./../actions/nivel.actions";
+import * as fromValores from "./../actions/valor.actions";
+import * as fromCentros from "./../actions/centro.actions";
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { FiltreService } from '../../services/filtre.service';
+import { FiltreService } from './../../services/filtre.service';
 
 @Injectable()
 export class FilterEffectsService {

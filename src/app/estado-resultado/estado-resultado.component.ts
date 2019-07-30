@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { GrupoClass } from '../models/grupo.model';
+import { GrupoClass } from './../models/grupo.model';
 
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducers';
+import { AppState } from './../app.reducers';
 import * as fromNiveles from './../store/actions/nivel.actions';
 import * as fromValores from './../store/actions/valor.actions';
 import * as fromCentros from './../store/actions/centro.actions';
@@ -28,6 +28,8 @@ export class EstadoResultadoComponent implements OnInit {
   chartOption1: EChartOption;
   chartOption2: EChartOption;
   chartOption3: EChartOption;
+
+  chartOption: EChartOption;
 
 
   //AutoComplete material

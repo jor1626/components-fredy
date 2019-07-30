@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { GrupoClass } from '../../models/grupo.model';
+import { GrupoClass } from './../../models/grupo.model';
 
 export const LISTAR_GRUPO = "[GRUPO] Listar";
 export const LISTAR_GRUPO_SUCCESS = "[GRUPO] Correcto Listar";

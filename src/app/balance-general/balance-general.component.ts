@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GrupoClass } from '../models/grupo.model';
 
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducers';
+import { AppState } from './../app.reducers';
 import * as fromNiveles from './../store/actions/nivel.actions';
 import * as fromValores from './../store/actions/valor.actions';
 import * as fromCentros from './../store/actions/centro.actions';

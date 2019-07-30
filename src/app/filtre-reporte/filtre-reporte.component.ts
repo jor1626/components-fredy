@@ -3,10 +3,10 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
-import { AppState } from '../app.reducers';
-import * as fromGrupo from '../store/actions/grupo.actions';
-import { GrupoClass } from '../models/grupo.model';
-import { BodegaClass } from '../models/bodegas.model';
+import { AppState } from './../app.reducers';
+import * as fromGrupo from './../store/actions/grupo.actions';
+import { GrupoClass } from './../models/grupo.model';
+import { BodegaClass } from './../models/bodegas.model';
 
 @Component({
   selector: 'app-filtre-reporte',
