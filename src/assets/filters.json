@@ -70,5 +70,42 @@
             "codigo": "02",
             "nombre": "Existencia 2"
         }
+    ],
+    "perdidas_ganancias":[
+        {
+            "codigo": "4",
+            "nombre": "Ingreso",
+            "saldo": "-1.445.988.168"
+        },
+        {
+            "codigo": "41",
+            "nombre": "Operacionales",
+            "saldo": "-6.445.988.168"
+        },
+        {
+            "codigo": "4135",
+            "nombre": "Comercio al por mayor y menor",
+            "saldo": "-5.135.988.168"
+        },
+        {
+            "codigo": "413554",
+            "nombre": "Ventas de equipos de oficina y programas de computaciòn",
+            "saldo": "-1.445.988.168"
+        },
+        {
+            "codigo": "41355405",
+            "nombre": "Ventas Excluidas",
+            "saldo": "-68.445.988.168"
+        },
+        {
+            "codigo": "41355410",
+            "nombre": "Ventas Gravadas",
+            "saldo": "445.988.168"
+        },
+        {
+            "codigo": "41355415",
+            "nombre": "Ventas Exentas",
+            "saldo": "-1.445.988.168"
+        }
     ]
 }

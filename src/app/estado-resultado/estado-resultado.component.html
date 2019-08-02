@@ -102,11 +102,11 @@
 
         <div class="row">
           <div class="col-lg-12 pull-right">
-              <button type="button" class="btn btn-accion pull-right">Generar</button>
+              <button type="button" (click)="generar()" class="btn btn-accion pull-right">Generar</button>
           </div>
-         
         </div>
       </form>
+      <hr>
 
       <div class="row">
         <div class="col-lg-4">
@@ -119,6 +119,77 @@
           <div echarts [options]="chartOption3" class="demo-chart"></div>
         </div>
       </div>
+      <br>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div role="tabpanel">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" (click)="visiblePanel1()" [ngClass]="{'active': detalle}">
+                      <a aria-controls="detalle" role="tab" data-toggle="tab">Detalle de perdidas y ganancias</a>
+                  </li>
+                  <li role="presentation" (click)="visiblePanel2()" [ngClass]="{'active': resumen}">
+                      <a aria-controls="resumen" role="tab" data-toggle="tab">Resumen de perdidas y ganancias</a>
+                  </li>
+              </ul>
+          
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <br>
+                <div role="tabpanel" class="tab-pane fade in" [ngClass]="{'active': detalle}" id="detalle">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-responsive table-bordered table-condensed compact table-striped">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Codigo</th>
+                            <th>Nombre de la cuenta</th>
+                            <th class="valor_tabla">Saldo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of perdidasGananciasList; let i=index">
+                              <td>{{i}}</td>
+                              <td>{{item.codigo}}</td>
+                              <td>{{item.nombre}}</td>
+                              <td class="valor_tabla">{{item.saldo}}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" [ngClass]="{'active': resumen}" id="resumen">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-responsive table-bordered table-condensed compact table-striped">
+                        <thead>
+                          <tr>
+                            <th></th>
+                            <th>Codigo</th>
+                            <th>Nombre de la cuenta</th>
+                            <th class="valor_tabla">Saldo</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of perdidasGananciasList; let i=index">
+                              <td>{{i}}</td>
+                              <td>{{item.codigo}}</td>
+                              <td>{{item.nombre}}</td>
+                              <td class="valor_tabla">{{item.saldo}}</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
 
   </div>

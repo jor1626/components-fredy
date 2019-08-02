@@ -4,6 +4,8 @@ import * as fromBodegas from "./../actions/bodega.actions";
 import * as fromNiveles from "./../actions/nivel.actions";
 import * as fromValores from "./../actions/valor.actions";
 import * as fromCentros from "./../actions/centro.actions";
+import * as fromPerdidasGanancias from "./../actions/perdidas-ganancias.actions";
+import * as fromReports from "./../actions/reporte.actions";
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -69,6 +71,28 @@ export class FilterEffectsService {
             return this.filtreService.getCentros().pipe(
                 map(nivel => new fromCentros.ListarCentrosSuccessActions(nivel)),
                 catchError(error => of(new fromCentros.ListarCentrosFailActions(error)))
+            )
+        })
+    );
+
+    @Effect()
+    cargarPerdidasGanancias$ = this.actions$.pipe(
+        ofType(fromPerdidasGanancias.LISTAR_PERDIDAS_GANANCIAS),
+        switchMap(() => {
+            return this.filtreService.getPerdidasGanancias().pipe(
+                map(data => new fromPerdidasGanancias.PerdidasGananciasSuccessAction(data)),
+                catchError(error => of(new fromPerdidasGanancias.PerdidasGananciasFailAction(error)))
+            )
+        })
+    );
+
+    @Effect()
+    reporteEstadoResultado$ = this.actions$.pipe(
+        ofType(fromReports.GENERAR_REPORTE),
+        switchMap((action: any) => {
+            return this.filtreService.reporte(action.data).pipe(
+                map(data => new fromReports.GenerarReporteActionSuccess(data)),
+                catchError(error => of(new fromReports.GenerarReporteActionFail(error)))
             )
         })
     );

@@ -25,6 +25,7 @@ body {
     margin-right: -.5rem  !important;
     margin-left: -.5rem  !important;
 }
+
 .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
     padding-left: 1em!important;
     padding-right: 1em!important;
@@ -58,17 +59,14 @@ body {
     margin-top: -35px  !important;
 }
 
-label {
-    display: block  !important;
-    max-width: 100%  !important;
-    margin-bottom: -20px  !important;
-    font-weight: 700  !important;
-}
-
 .labelInput {
     color: #407ec9 !important;
     font-size: 12px;
     font-style: italic !important;
+    display: block  !important;
+    max-width: 100%  !important;
+    margin-bottom: -20px  !important;
+    font-weight: 700  !important;
 }
 
 .btn-autocompleted {
@@ -130,5 +128,18 @@ h4 {
 }
 
 .demo-chart {
-    height: 400px;
+    height: 200px !important;
+}
+
+.valor_tabla {
+    font-weight: bold;
+    text-align: right;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+}
+
+a.paginate_button.current {
+    background: #407EC9 !important;
 }

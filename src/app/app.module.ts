@@ -10,12 +10,10 @@ import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
 import { appReducers, effectsArray } from './app.reducers';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { environment } from 'src/environments/environment';
-
 //Librerias 
 
 import { NgxEchartsModule } from 'ngx-echarts';
+import { DataTablesModule } from 'angular-datatables';
 import { MatButtonToggleModule, 
    MatButtonModule, 
    MatDatepickerModule, 
@@ -35,7 +33,6 @@ import { FiltreReporteComponent } from './filtre-reporte/filtre-reporte.componen
 import { FiltreService } from './services/filtre.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FiltreReporteComponent } from './filtre-reporte/filtre-reporte.component';
 
 @NgModule({
    declarations: [
@@ -49,6 +46,7 @@ import { FiltreReporteComponent } from './filtre-reporte/filtre-reporte.componen
       HttpClientModule,
       BrowserAnimationsModule,
       NgxEchartsModule,
+      DataTablesModule,
       AppRoutingModule,
       MatButtonToggleModule,
       MatButtonModule,
