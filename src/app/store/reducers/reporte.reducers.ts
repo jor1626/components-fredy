@@ -17,7 +17,6 @@ const stateInitial: ReporteState = {
 export function reporteReducers(state = stateInitial, action: actionsReports.actionsReport): ReporteState {
     switch (action.type) {
         case actionsReports.GENERAR_REPORTE:
-            
             return {
                 ...state,
                 loading: true

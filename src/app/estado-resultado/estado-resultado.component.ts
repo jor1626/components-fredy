@@ -195,6 +195,7 @@ export class EstadoResultadoComponent implements OnInit, OnDestroy, AfterViewIni
       valorExpresadoList: ['', Validators.required],
       centroCostosList: ['', Validators.required],
       filtrocentroCostoTxt: [''],
+      userGenerator: ['JORDAN OROZCO R']
     });
 
     //Exec actions store
@@ -228,7 +229,7 @@ export class EstadoResultadoComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   rerender(): void {
-    this.dtElement.dtInstance.subscribe((dtInstance: DataTables.Api) => {
+    this.dtElement.dtInstance.then((dtInstance: DataTables.Api) => {
       // Destroy the table first
       dtInstance.destroy();
       // Call the dtTrigger to rerender again

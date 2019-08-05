@@ -72,7 +72,7 @@ export class FiltreService {
 
   reporte(action){
     var url = `${this.url}/estado-resultado`;
-    return this.http.post(url,{data: action}).pipe(
+    return this.http.post(url,action).pipe(
       map((response: any) => {
         return response;
       })

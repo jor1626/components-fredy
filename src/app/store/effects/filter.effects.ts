@@ -90,6 +90,8 @@ export class FilterEffectsService {
     reporteEstadoResultado$ = this.actions$.pipe(
         ofType(fromReports.GENERAR_REPORTE),
         switchMap((action: any) => {
+            console.log(action);
+            
             return this.filtreService.reporte(action.data).pipe(
                 map(data => new fromReports.GenerarReporteActionSuccess(data)),
                 catchError(error => of(new fromReports.GenerarReporteActionFail(error)))
