@@ -31,7 +31,7 @@
     "datatables.net": "^1.10.19",
     "datatables.net-dt": "^1.10.19",
     "echarts": "^4.2.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-echarts": "^4.2.1",
     "rxjs": "~6.4.0",
     "saturn-datepicker": "^7.4.0",
